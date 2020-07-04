@@ -1,0 +1,354 @@
+@import "config";
+@import "Utilities";
+@import "work";
+// General setting
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #fff;
+  font-family: "Dosis", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-color;
+}
+
+ul {
+  list-style: none;
+}
+
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+img {
+  width: 100%;
+}
+// header
+#header {
+  &-home {
+    background: $bg-image no-repeat center right/cover;
+    height: 100vh;
+    color: #fff;
+
+    .header-content {
+      text-align: center;
+      padding-top: 20%;
+
+      h1 {
+        font-size: 4rem;
+        line-height: 1.2;
+      }
+    }
+  }
+  &-inner {
+    background: $bg-image no-repeat 20% 30% / cover;
+    height: 5.5rem;
+    border-bottom: 3px solid $main-color;
+  }
+}
+
+// logo
+#logo {
+  height: 70px;
+  width: 70px;
+}
+
+// Nav
+#main-nav {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.6rem;
+
+  ul {
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    padding: 0.5rem 1.5rem;
+  }
+
+  a {
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.5s;
+    padding-bottom: 0.5rem;
+
+    &:hover {
+      border-color: $light-color;
+    }
+
+    &.current {
+      border-color: $main-color;
+    }
+  }
+}
+// section a
+#home {
+  &-a {
+    .specials {
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      .fas {
+        color: $main-color;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  &-b {
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      div {
+        padding: 3rem 1rem;
+        &:nth-child(odd) {
+          background-color: $light-color;
+        }
+
+        &:nth-child(even) {
+          background-color: $medium-color;
+        }
+
+        .stats-title {
+          font-size: 1.5rem;
+          padding: 0.5rem 0;
+        }
+        .stats-number {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  // Home Section C
+  &-c {
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+      text-align: center;
+
+      // process-step
+      &-step {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 28px;
+        background: $main-color;
+        color: set-text-color($main-color);
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        line-height: 45px;
+        // padding: 1rem;
+        transition: all 1s;
+      }
+
+      // process-icon
+      &-icon {
+        border-radius: 50%;
+        background: $dark-color;
+        color: set-text-color($dark-color);
+        // padding: 2rem;
+        width: 140px;
+        height: 140px;
+        line-height: 140px;
+        text-align: center;
+        position: relative;
+        transition: all 1s;
+
+        &:hover {
+          background: $main-color;
+          width: 160px;
+          height: 160px;
+          line-height: 160px;
+
+          .process-step {
+            background: $dark-color;
+            color: set-text-color($dark-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+// About
+#about {
+  &-a {
+    .about-info {
+      display: grid;
+      grid-template-areas:
+        "bioimage bio bio"
+        "aw1 aw2 aw3";
+      grid-gap: 1.2rem;
+    }
+    .bio-image {
+      grid-area: bioimage;
+    }
+    .bio {
+      grid-area: bio;
+      border-left: 3px solid $main-color;
+      padding: 1.2rem;
+    }
+    .award-1 {
+      grid-area: aw1;
+    }
+    .award-2 {
+      grid-area: aw2;
+    }
+
+    .award-3 {
+      grid-area: aw3;
+    }
+
+    .award-1 .fas,
+    .award-2 .fas,
+    .award-3 .fas {
+      color: $main-color;
+      margin: 0.8rem;
+    }
+  }
+  &-b {
+    .progress {
+      background-color: $medium-color;
+      overflow: hidden;
+      margin-bottom: 0.6rem;
+      border-radius: 5px;
+      height: 20px;
+      color: #fff;
+
+      div {
+        background-color: $main-color;
+        height: 100%;
+      }
+    }
+  }
+  &-c {
+    .logo {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+
+      img {
+        width: 70%;
+      }
+    }
+  }
+  &-d {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+
+      p {
+        border: 1px solid $medium-color;
+        padding: 1rem;
+        border-radius: 5px;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin: 1rem 1rem 0 0;
+        }
+      }
+    }
+  }
+}
+// Contact
+#contact {
+  &-a {
+    .text-fields {
+      display: grid;
+      grid-template-areas:
+        "name email"
+        "subject phone"
+        "message message";
+      grid-gap: 1rem;
+
+      .name-field {
+        grid-area: name;
+      }
+      .email-field {
+        grid-area: email;
+      }
+      .subject-field {
+        grid-area: subject;
+      }
+      .phone-field {
+        grid-area: phone;
+      }
+      .message-field {
+        grid-area: message;
+        height: 100px;
+        margin-bottom: 1rem;
+      }
+
+      .text-field {
+        padding: 0.5rem 1rem;
+      }
+    }
+    button[type="submit"] {
+      width: 50%;
+    }
+  }
+  &-b {
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+  &-c {
+    h1 {
+      font-size: 4rem;
+    }
+  }
+}
+
+// Footer
+#main-footer {
+  background-color: $dark-color;
+  color: #fff;
+  height: 5rem;
+  padding: 0 1rem;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+
+    .social .fab {
+      margin-right: 1rem;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      padding: 0.7rem;
+
+      &:hover {
+        background-color: $main-color;
+      }
+    }
+  }
+}
+
+@import "media";
