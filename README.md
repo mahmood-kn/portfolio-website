@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a demo _portfolio website_ written using **vanilla javascript**.
+This is a demo _portfolio website_ written using **vanilla javascript** and **sass**.
 
 **Note:** This project is my practice based on other resources.  
 
